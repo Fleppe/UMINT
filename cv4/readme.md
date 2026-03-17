@@ -24,7 +24,7 @@
 
 ### Graf konvergencie
 
-![Bez pokuty](bez_pokuty.png)
+![Bez pokuty](assets/basicBeh.png)
 
 ### Výsledky jednotlivých behov
 
@@ -36,6 +36,7 @@
 | 4 | 3300000 | 
 | 5 | 3300000 |
 
+---
 ### Najlepší jedinec
 
 | Premenná | Hodnota |
@@ -53,7 +54,7 @@ Pri mŕtvej pokute dostane riešenie veľkú fixnú penalizáciu, ak poruší ni
 
 ### Graf konvergencie
 
-![mrtva](assets/dead_penalty.png)
+![mrtva](assets/mrtvy_beh.png)
 
 ### Výsledky jednotlivých behov
 
@@ -83,7 +84,7 @@ Pri stupňovitej pokute závisí penalizácia od počtu porušených obmedzení.
 
 ### Graf konvergencie
 
-![stupnovita pokuta](assets/stupnovita_pokuta.png)
+![stupnovita pokuta](assets/stupnovita.png)
 
 ### Výsledky jednotlivých behov
 

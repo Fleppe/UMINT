@@ -29,7 +29,7 @@
 ### Výsledky jednotlivých behov
 
 | Run | Finálna fitness |
-|---|---|---|
+|---|---|
 | 1 | 3300000 | 
 | 2 | 3300000 | 
 | 3 | 3300000 | 
@@ -59,7 +59,7 @@ Pri mŕtvej pokute dostane riešenie veľkú fixnú penalizáciu, ak poruší ni
 ### Výsledky jednotlivých behov
 
 | Run | Finálna fitness |
-|---|---|---|
+|---|---|
 | 1 | 6.010151e+05 | 
 | 2 | 6.355475e+05 | 
 | 3 | 6.452212e+05 | 
@@ -89,7 +89,7 @@ Pri stupňovitej pokute závisí penalizácia od počtu porušených obmedzení.
 ### Výsledky jednotlivých behov
 
 | Run | Finálna fitness | 
-|---|---|---|
+|---|---|
 | 1 |  6.788614e+05 | 
 | 2 | 6.732438e+05 | 
 | 3 | 6.884136e+05 | 
@@ -120,7 +120,7 @@ Pri úmernej pokute je penalizácia priamo úmerná miere porušenia obmedzenia.
 ### Výsledky jednotlivých behov
 
 | Run | Finálna fitness |
-|---|---|---|
+|---|---|
 | 1 | 6.994843e+05 | 
 | 2 |  6.747035e+05 | 
 | 3 | 6.831093e+05 | 

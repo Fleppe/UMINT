@@ -1,5 +1,5 @@
 function [fine] = stupnovita(values)
-    STEP = 5000000;  
+    STEP = 5e6;  
     fine = 0;
 
     if sum(values) > 10000000,                fine = fine + STEP; end

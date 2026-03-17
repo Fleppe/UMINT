@@ -19,9 +19,9 @@ for run = 1:num_runs
         end
     
         for j = 1:numPop
-        fitness(j) = fitness(j) + mrtva(pop(j,:));
+        %fitness(j) = fitness(j) + mrtva(pop(j,:));
         %fitness(j) = fitness(j) + stupnovita(pop(j,:));
-        %itness(j) = fitness(j) + umerna(pop(j,:));
+        fitness(j) = fitness(j) + umerna(pop(j,:));
         end
         if gen == max_gen
             [best, idx] = min(fitness);
@@ -41,7 +41,7 @@ for run = 1:num_runs
         joined = muta(joined, 0.1, amp,space);
         pop    = [joined; best];
     end
-end
+
 
 %=========== Run =================
 
@@ -51,10 +51,10 @@ end
 figure(1);
 plot(1:max_gen, -fitness_history, 'b-', 'LineWidth', 2);
 xlabel('Generácia');
-ylabel('Fitness (najlepší jedinec)');
-title('Moje XTB portfolio.');
-legend("Palantir stocks.")
-ylim([-1000000, 1000000]);
+ylabel('Fitness');
+title('Priebeh fitness funkcie');
+%ylim([-1000000, 1000000]);
 grid on;
 hold on;
 
+end

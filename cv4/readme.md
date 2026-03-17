@@ -96,6 +96,7 @@ Pri stupňovitej pokute závisí penalizácia od počtu porušených obmedzení.
 | 4 | 6.785248e+05 | 
 | 5 | 6.842070e+05 | 
 
+---
 ### Najlepší jedinec
 
 | Premenná | Hodnota |

@@ -60,6 +60,30 @@
 | Test |  90.2% | 97.1% | 98.7% | 
 | All | 92.9% |97.9% | 99.2% | 
 
+### Trieda 1
+
+| | Predikovana 1 | Nepredikovana 1 |
+|---|---|---|
+| **1** | TP = 646 | FN = 20 |
+| **Mimo** | FP = 18 | TN = 166 |
+
+---
+
+### Trieda 2
+
+| | Predikovana 2 | Nepredikovana 2 |
+|---|---|---|
+| **2** | TP = 93 | FN = 24 |
+| **Mimo** | FP = 21 | TN = 712 |
+
+---
+
+### Trieda 3
+
+| | Predikovana 3 | Nepredikovana 3 |
+|---|---|---|
+| **3** | TP = 62 | FN = 5 |
+| **Mimo** | FP = 10 | TN = 773 |
 ---
 ![M2 confusion matrix](img/neuron_struct2_5conf.jpg)
 

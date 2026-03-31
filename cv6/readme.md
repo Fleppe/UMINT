@@ -1,7 +1,7 @@
-# MLP - classification of medical data
+# MLP - Klasifikácia medicínskych dát
 
 
-## Parameters
+## Parametre
 
 | Type | Structure | Epoch
 |---|---|---|
@@ -11,7 +11,7 @@
 
 
 ---
-## Accuracy over each run
+## Presnosť
 ### neuron_struct1
 | Run | Accuracy on testing data |  Accuracy on training data |
 |---|---| ---|
@@ -42,7 +42,7 @@
 | 5 | 90.7 |96.5 |
 
 ---
-## summary of structures
+## Zhodnotenie
 | Type | Min test| Max test|  Mean test| Min train| Max train|  Mean train|
 |---|---| ---|---|---| ---|---|
 | M1 | 91.4 | 94.2 | 92.3 | 96.8 | 97.3 | 97.02 |
@@ -50,10 +50,10 @@
 | M3  | 90.7 | 93.1 |91.82 | 96.5 | 98.4 | 97.56 |
 
 ---
-## confusion matrices with best test score and overall score
+## Matice s najlepším test a overall skorom
 ![M1 confusion matrix](img/neuron_struct1_5_conf.jpg)
 
-### Specifity
+### Špecificita
 | Type | Class 1 | Class 2| Class 3|
 |---|---| ---| ---|
 | Train | 94.7% | 98.4% | 99.5% | 
@@ -63,7 +63,7 @@
 ---
 ![M2 confusion matrix](img/neuron_struct2_5conf.jpg)
 
-### Specifity
+### Špecificita
 | Type | Class 1 | Class 2| Class 3|
 |---|---| ---| ---|
 | Train | 94.8% | 99.1% | 99.7% | 
@@ -73,7 +73,7 @@
 ---
 ![M3 confusion matrix](img/neuron_struct3_4_conf.jpg)
 
-### Specifity
+### Špecificita
 | Type | Class 1 | Class 2| Class 3|
 |---|---| ---| ---|
 | Train | 96.8% | 98.4% | 99.8% | 
@@ -83,9 +83,9 @@
 
 
 ---
-## confusion matrices with best train score
+## Matice s najlepším trenovacim skore
 ![M1 confusion matrix](img/neuron_struct1_3_conf.jpg)
-### Specifity
+### Špecificita
 | Type | Class 1 | Class 2| Class 3|
 |---|---| ---| ---|
 | Train | 95.8% | 98.2% | 99.7% | 
@@ -95,7 +95,7 @@
 
 ---
 ![M2 confusion matrix](img/neuron_struct2_3_conf.jpg)
-### Specifity
+### Špecificita
 | Type | Class 1 | Class 2| Class 3|
 |---|---| ---| ---|
 | Train | 96.2% | 98.8% | 99.5% | 
@@ -104,7 +104,7 @@
 
 ---
 ![M3 confusion matrix](img/neuron_struct3_3_conf.jpg)
-### Specifity
+### Špecificita
 | Type | Class 1 | Class 2| Class 3|
 |---|---| ---| ---|
 | Train | 96.2% | 98.8% | 99.8% | 
@@ -114,12 +114,12 @@
 
 ---
 
-## loss-epoch graphs for best test scores
+## loss-epoch graf s najlepším test skorom
 ![M1 graph](img/neuron_struct1_5_graph.jpg)
 ![M2 graph](img/neuron_struct2_5graph.jpg)
 ![M3 graph](img/neuron_struct3_4_graph.jpg)
 
-## loss-epoch graphs for best train scores
+## loss-epoch graf s najlepším train skorom
 ![M1 graph](img/neuron_struct1_3_graph.jpg)
 ![M2 graph](img/neuron_struct2_4graph.jpg)
 ![M3 graph](img/neuron_struct3_3_graph.jpg)
@@ -143,3 +143,8 @@
 | 1 | 1.0 | 0.0 | 0.0 |
 | 2 | 0.0 | 0.09 | 0.0 |
 | 3 | 0.0 | 0.91| 1.0 |
+
+## Záver
+- Model často klasifikuje vzorky iných tried ako Triedu 1
+- Model má najlepšiu specificitu v Triede 3
+- M1 je najlepší model

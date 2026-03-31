@@ -52,14 +52,67 @@
 ---
 ## confusion matrices with best test score and overall score
 ![M1 confusion matrix](img/neuron_struct1_5_conf.jpg)
+
+### Specifity
+| Type | Class 1 | Class 2| Class 3|
+|---|---| 
+| Train | 94.7% | 98.4% | 99.5% | 
+| Test |  90.2% | 97.1% | 98.7% | 
+| All | 92.9% |97.9% | 99.2% | 
+
+---
 ![M2 confusion matrix](img/neuron_struct2_5conf.jpg)
+
+### Specifity
+| Type | Class 1 | Class 2| Class 3|
+|---|---| 
+| Train | 94.8% | 99.1% | 99.7% | 
+| Test |  84.6% | 96.0% | 98.9% | 
+| All | 90.7% | 97.9% | 99.4% | 
+
+---
 ![M3 confusion matrix](img/neuron_struct3_4_conf.jpg)
 
+### Specifity
+| Type | Class 1 | Class 2| Class 3|
+|---|---| 
+| Train | 96.8% | 98.4% | 99.8% | 
+| Test |  86.1% | 97.2% | 98.4% | 
+| All | 92.6% | 97.9% | 99.2% | 
+
+
+
+---
 ## confusion matrices with best train score
 ![M1 confusion matrix](img/neuron_struct1_3_conf.jpg)
-![M2 confusion matrix](img/neuron_struct2_3_conf.jpg)
-![M3 confusion matrix](img/neuron_struct3_3_conf.jpg)
+### Specifity
+| Type | Class 1 | Class 2| Class 3|
+|---|---| 
+| Train | 95.8% | 98.2% | 99.7% | 
+| Test |  88.6% | 94.8% | 98.6% | 
+| All | 92.6% | 96.9%| 99.2% | 
 
+
+---
+![M2 confusion matrix](img/neuron_struct2_3_conf.jpg)
+### Specifity
+| Type | Class 1 | Class 2| Class 3|
+|---|---| 
+| Train | 96.2% | 98.8% | 99.5% | 
+| Test |  83.6% | 96.2% | 98.6% | 
+| All | 91.1% | 97.7% | 99.1% | 
+
+---
+![M3 confusion matrix](img/neuron_struct3_3_conf.jpg)
+### Specifity
+| Type | Class 1 | Class 2| Class 3|
+|---|---| 
+| Train | 96.2% | 98.8% | 99.8% | 
+| Test |  87.5% | 95.2% | 99.3% | 
+| All | 92.9% | 97.3% | 99.6% | 
+
+
+---
 
 ## loss-epoch graphs for best test scores
 ![M1 graph](img/neuron_struct1_5_graph.jpg)

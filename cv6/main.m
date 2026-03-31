@@ -19,7 +19,7 @@ for i = 1:data_out_size
 end
 
 % params
-neuron_struct = [50 50];
+neuron_struct = [50];
 
 net = patternnet(neuron_struct); 
 % main cycle
@@ -28,7 +28,7 @@ net = patternnet(neuron_struct);
     net.divideParam.trainRatio=0.60;
     net.divideParam.valRatio=0.0;
     net.divideParam.testRatio=0.4;
-
+    %net.trainParam.lr = 0.01;
     % train params
     net.trainParam.epochs = 100;
     net.trainParam.goal = 1e-5;

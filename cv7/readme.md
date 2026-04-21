@@ -133,10 +133,10 @@
 ![CNN1](img/cnn_perf1_1.png)
 ![CNN12](img/cnn_perf1_2.png)
 
-### CNN1
+### CNN2
 ![CNN2](img/cnn_perf2_1.png)
 ![CNN22](img/cnn_perf2_2.png)
-### CNN1
+### CNN3
 ![CNN3](img/cnn_perf3_1.png)
 ![CNN32](img/cnn_perf3_2.png)
 
@@ -158,7 +158,17 @@
 | D2 |  0.5 | 5 | 17.76| 0.0242| 0.0259 | 99.26|  99.86|
 | D3 |  0.7 | 5 | 11.86|  0.0305| 0.0249 | 99.3|  99.74|
 ---
+## Grafy loss-epoch priebehu pre rôzne dropouty
+### CNN1
+![CNN1](img/D11.png)
+![CNN12](img/D12.png)
 
+### CNN2
+![CNN2](img/D21.png)
+![CNN22](img/D22.png)
+### CNN3
+![CNN3](img/D31.png)
+![CNN32](img/D32.png)
 # Porovnanie rýchlosti trénovania
 
 | Model | Epochy |CPU čas \[s\] | GPU čas \[s\] | Zlepšenie|

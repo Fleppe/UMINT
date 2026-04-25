@@ -27,13 +27,13 @@ net = patternnet(neuron_struct);
     net.divideFcn='dividerand';
     net.divideParam.trainRatio=0.60;
     net.divideParam.valRatio=0.0;
-    net.divideParam.testRatio=0.4;
+    net.divideParam.testRatio=0.0;
     %net.trainParam.lr = 0.01;
     % train params
     net.trainParam.epochs = 100;
     net.trainParam.goal = 1e-5;
      
-   %net.trainParam.max_fail = 50;
+    %net.trainParam.max_fail = 50;
     % train
     [net, tr] = train(net, data_in, data_out_formated);
     

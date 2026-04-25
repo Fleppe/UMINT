@@ -1,0 +1,94 @@
+unzip('MNIST_MATLAB.zip');
+
+[Xtrain, Ytrain] = loadMNIST( ...
+    'MNIST_MATLAB/train/images.idx3-ubyte', ...
+    'MNIST_MATLAB/train/labels.idx1-ubyte');
+
+[Xtest, Ytest] = loadMNIST( ...
+    'MNIST_MATLAB/test/images.idx3-ubyte', ...
+    'MNIST_MATLAB/test/labels.idx1-ubyte');
+
+function [images, labels] = loadMNIST(imageFile, labelFile)
+    fid = fopen(imageFile, 'rb');
+    fread(fid, 1, 'int32', 0, 'ieee-be');
+    n = fread(fid, 1, 'int32', 0, 'ieee-be');
+    r = fread(fid, 1, 'int32', 0, 'ieee-be');
+    c = fread(fid, 1, 'int32', 0, 'ieee-be');
+    images = fread(fid, inf, 'uint8');
+    fclose(fid);
+
+    images = reshape(images, [c, r, n]);
+    images = permute(images, [2 1 3]);
+
+    fid = fopen(labelFile, 'rb');
+    fread(fid, 1, 'int32', 0, 'ieee-be');
+    fread(fid, 1, 'int32', 0, 'ieee-be');
+    labels = fread(fid, inf, 'uint8');
+    fclose(fid);
+end
+
+% ===============================
+
+
+Xtrain = double(Xtrain) / 255;
+Xtest = double(Xtest) / 255;
+datain_mlp = reshape(Xtrain, [784, size(Xtrain, 3)]);
+testin_mlp = reshape(Xtest, [784, size(Xtest, 3)]);
+
+target_indices = Ytrain + 1;
+dataout_mlp = full(ind2vec(target_indices'));
+
+target_indices_test = Ytest + 1;
+dataout_test = full(ind2vec(target_indices_test'));
+
+pocet_neuronov = [256];
+net = patternnet(pocet_neuronov);
+% pre GPU trenovanie
+net.inputs{1}.processFcns = {};  
+net.outputs{2}.processFcns = {};
+
+% rozdelenie
+net.divideFcn = 'dividerand';
+net.divideParam.trainRatio = 0.8;
+net.divideParam.valRatio = 0.2;
+net.divideParam.testRatio = 0;
+% nastavenia
+net.trainParam.epochs = 300;
+net.trainParam.goal = 1e-5;
+net.trainParam.show = 10;
+net.trainParam.max_fail = 20;
+net.trainParam.lr = 0.01;
+[net, tr] = train(net, datain_mlp, dataout_mlp, "useGPU", "yes"); % zapnutie GPU trenovania
+
+% test data
+outnetsim = sim(net, testin_mlp);
+% test loss
+test_loss = perform(net, dataout_test, outnetsim); 
+% vypocet presnosti
+c = confusion(dataout_test, outnetsim);
+accuracy = (1 - c) * 100; 
+
+
+% confusion Matrix
+figure
+plotconfusion(dataout_test, outnetsim)
+title('Confusion Matrix pre MLP (MNIST)')
+fprintf('Celková úspešnosť na testovacích dátach: %.2f%%\n', accuracy);
+fprintf('Test Loss: %.6f\n', test_loss);
+fprintf('Train loss: %.6f\n', tr.best_perf);
+% zobrazenie štruktúry siete
+view(net)
+figure();
+for i = 0:9
+    idx = find(Ytest == i, 1); 
+    img_vector = testin_mlp(:, idx);
+    out_pravdepodobnosti = sim(net, img_vector);
+    predikovana_trieda = vec2ind(out_pravdepodobnosti) - 1;
+    max_skore = max(out_pravdepodobnosti);
+    subplot(2, 5, i+1);
+    img_2d = reshape(img_vector, [28, 28]);
+    imshow(img_2d);
+    
+    title(['S: ' num2str(i) ' | P: ' num2str(predikovana_trieda)]);
+    xlabel(['Istota: ' num2str(max_skore * 100, '%.1f') '%']);
+end

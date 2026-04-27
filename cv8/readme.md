@@ -16,7 +16,6 @@
 |--------------|-----------|-------|
 | Resize | 256 | Zmena veľkosti na 256×256 px |
 | CenterCrop| 224/227(Alexnet) | Výrez 224×224/227x227(Alexnet) px |
-| RandomHorizontalFlip | – | Náhodné horizontálne zrkadlenie |
  
 ## M1 – AlexNet
 

@@ -183,20 +183,20 @@
 ## Predikcie
 ### AlexNet
 
-![AlexNet – from scratch](img/plot_alexnet_scratch.png)
-![AlexNet – transfer learning](img/plot_alexnet_transfer.png)
+![AlexNet – from scratch](img/alex_sc.png)
+![AlexNet – transfer learning](img/alex_tl.png)
 
 ### ResNet34 bez augmentacie
 
-![AlexNet – from scratch](img/plot_alexnet_scratch.png)
-![AlexNet – transfer learning](img/plot_alexnet_transfer.png)
+![Resnet34 – from scratch](img/resnet_sc.png)
+![Resnetšč – transfer learning](img/resnet_tl.png)
 
 ### ResNet34 s augmentaciou
 
-![AlexNet – from scratch](img/plot_alexnet_scratch.png)
-![AlexNet – transfer learning](img/plot_alexnet_transfer.png)
+![Resnetšč – from scratch](img/resnet_aug_sc.png)
+![Resnetšč – transfer learning](img/resnet_aug_tl.png)
 
 ###MobileNet_v2
 
-![AlexNet – from scratch](img/plot_alexnet_scratch.png)
-![AlexNet – transfer learning](img/plot_alexnet_transfer.png)
+![MobileNet – from scratch](img/mob_sc.png)
+![MobileNet – transfer learning](img/mob_tl.png)

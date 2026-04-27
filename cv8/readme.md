@@ -179,3 +179,24 @@
 ![MobileNet_v2 – transfer learning](img/plot_mobilenet_v2_transfer.png)
  
 ---
+
+## Predikcie
+### AlexNet
+
+![AlexNet – from scratch](img/plot_alexnet_scratch.png)
+![AlexNet – transfer learning](img/plot_alexnet_transfer.png)
+
+### ResNet34 bez augmentacie
+
+![AlexNet – from scratch](img/plot_alexnet_scratch.png)
+![AlexNet – transfer learning](img/plot_alexnet_transfer.png)
+
+### ResNet34 s augmentaciou
+
+![AlexNet – from scratch](img/plot_alexnet_scratch.png)
+![AlexNet – transfer learning](img/plot_alexnet_transfer.png)
+
+###MobileNet_v2
+
+![AlexNet – from scratch](img/plot_alexnet_scratch.png)
+![AlexNet – transfer learning](img/plot_alexnet_transfer.png)

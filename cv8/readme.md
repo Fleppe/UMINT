@@ -196,7 +196,7 @@
 ![Resnetšč – from scratch](img/resnet_aug_sc.png)
 ![Resnetšč – transfer learning](img/resnet_aug_tl.png)
 
-###MobileNet_v2
+### MobileNet_v2
 
 ![MobileNet – from scratch](img/mob_sc.png)
 ![MobileNet – transfer learning](img/mob_tl.png)

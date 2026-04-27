@@ -75,7 +75,7 @@
 
 ### Tabuľka 8: Výsledky 3 behov – from scratch
 
-| Beh | Train loss | Train acc [%] | Val loss | Val acc [%] |  Test acc [%] ||Skore ukončenie [epochy]|
+| Beh | Train loss | Train acc [%] | Val loss | Val acc [%] |  Test acc [%] |Skore ukončenie [epochy]|
 |-----|-----------|--------------|---------|------------|---------|---------|
 | 1 | 0.7294 | 94.20 | 2.1703 | 40.33 |  43.20 | 20|
 | 2 | 1.2791 | 67.30 | 1.8923 | 40.73 |  43.88 | 19|
@@ -83,7 +83,7 @@
 ---
 ### Tabuľka 9: Výsledky 3 behov – transfer learning (TL)
 
-| Beh | Train loss | Train acc [%] | Val loss | Val acc [%] |  Test acc [%] ||Skore ukončenie [epochy]|
+| Beh | Train loss | Train acc [%] | Val loss | Val acc [%] |  Test acc [%] |Skore ukončenie [epochy]|
 |-----|-----------|--------------|---------|------------|------------|---------|
 | 1 | 0.7821 | 92.62 | 0.9205 | 85.40 |  89.56 |19|
 | 2 | 0.6779 | 97.75 | 0.9024 | 86.07 | 89.64 |24|

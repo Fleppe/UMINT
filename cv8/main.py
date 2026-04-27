@@ -16,9 +16,8 @@ import random
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 NUM_EPOCHS = 30
 BATCH_SIZE = 64
-LR_TL = 1e-4
-LR_SCRATCH = 1e-4
-NUM_RUNS = 1
+LR =  1e-4
+NUM_RUNS = 3
 AUGMENT = True
 MODEL_NAMES = ["resnet34"] 
 MODES = ["transfer", "scratch"]
@@ -57,6 +56,7 @@ def get_data():
         full_train_eval = datasets.Food101(root='./data', split='train', download=False, transform=data_transforms)
         full_test       = datasets.Food101(root='./data', split='test',  download=True,  transform=data_transforms)
 
+    # update indeces of the subset of classes
     def filter_subset(dataset):
         c_to_i = {dataset.classes[i]: i for i in range(len(dataset.classes))}
         target_ids = [c_to_i[cls] for cls in KEEP_CLASSES]
@@ -68,15 +68,12 @@ def get_data():
         dataset._labels = new_labels.tolist()
         return indices
 
-    indices_aug  = filter_subset(full_train_aug)
-    indices_eval = filter_subset(full_train_eval)
-    combined = list(zip(indices_aug, indices_eval))
-    random.shuffle(combined)
-    indices_aug, indices_eval = zip(*combined)
-
-    tr_sz = int(0.8 * len(indices_aug))
-    train_ds = Subset(full_train_aug,  indices_aug[:tr_sz])
-    val_ds   = Subset(full_train_eval, indices_eval[tr_sz:])
+    indices  = filter_subset(full_train_aug)
+    random.shuffle(indeces)
+    
+    tr_sz = int(0.8 * len(indices))
+    train_ds = Subset(full_train_aug,  indices[:tr_sz])
+    val_ds   = Subset(full_train_eval, indices[tr_sz:])
 
     test_indices = filter_subset(full_test)
     test_ds = Subset(full_test, test_indices)
@@ -115,7 +112,7 @@ def visualize(model, test_dataset, title_prefix):
             prob = torch.nn.functional.softmax(output, dim=1)
             conf, pred = torch.max(prob, 1)
             
-            # Od-normalizovanie pre korektné farby
+            
             img_show = img_tensor.permute(1, 2, 0).cpu().numpy()
             img_show = np.clip(img_show * [0.229, 0.224, 0.225] + [0.485, 0.456, 0.406], 0, 1)
             
@@ -169,9 +166,9 @@ def build_model(name, mode):
 # 4. TRÉNOVACÍ CYKLUS
 # ==========================================
 def train_and_test(model, mode):
-    criterion = nn.CrossEntropyLoss(label_smoothing=0.1)
+    criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(filter(lambda p: p.requires_grad, model.parameters()), 
-                           lr=(LR_TL if mode == "transfer" else LR_SCRATCH))
+                           lr=LR)
     
     scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='max', factor=0.1, patience=2)
     history = {'t_loss': [], 'v_loss': [], 't_acc': [], 'v_acc': []}

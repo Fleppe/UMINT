@@ -10,9 +10,7 @@ import copy
 from datetime import timedelta
 import random
 
-# ==========================================
-# 1. KONFIGURÁCIA
-# ==========================================
+# conf
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 NUM_EPOCHS = 30
 BATCH_SIZE = 64
@@ -24,9 +22,6 @@ MODES = ["transfer", "scratch"]
 KEEP_CLASSES = ["apple_pie", "caesar_salad", "clam_chowder", "edamame", "french_fries",
                 "hamburger", "hot_dog", "ice_cream", "sushi", "waffles"]
 
-# ==========================================
-# 2. DATASET A TRANSFORMÁCIE
-# ==========================================
 data_transforms = transforms.Compose([
     transforms.Resize(256),
     transforms.CenterCrop(224),
@@ -43,7 +38,7 @@ augment_transforms = transforms.Compose([
     transforms.ToTensor(),
     transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
 ])
-
+# uprava datasetu
 def get_data():
     print(f"\n[INFO] Sťahujem/Načítavam Food101 dataset na {DEVICE}...")
 
@@ -85,7 +80,7 @@ train_ds, val_ds, test_ds = get_data()
 train_loader = DataLoader(train_ds, batch_size=BATCH_SIZE, shuffle=True, num_workers=4, pin_memory=True)
 val_loader = DataLoader(val_ds, batch_size=BATCH_SIZE, shuffle=False, num_workers=4, pin_memory=True)
 test_loader = DataLoader(test_ds, batch_size=BATCH_SIZE, shuffle=False, num_workers=4, pin_memory=True)
-
+#vizualizacia
 def visualize(model, test_dataset, title_prefix):
 
     model.eval()
@@ -130,9 +125,7 @@ def visualize(model, test_dataset, title_prefix):
     plt.subplots_adjust(hspace=0.6, wspace=0.3, top=0.85)
     plt.show()
 
-# ==========================================
-# 3. MODEL BUILDER
-# ==========================================
+
 def build_model(name, mode):
     is_tl = (mode == "transfer")
     
@@ -162,15 +155,12 @@ def build_model(name, mode):
         
     return m.to(DEVICE)
 
-# ==========================================
-# 4. TRÉNOVACÍ CYKLUS
-# ==========================================
+
 def train_and_test(model, mode):
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(filter(lambda p: p.requires_grad, model.parameters()), 
                            lr=LR)
     
-    scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='max', factor=0.1, patience=2)
     history = {'t_loss': [], 'v_loss': [], 't_acc': [], 'v_acc': []}
     
     patience = 6
@@ -213,7 +203,6 @@ def train_and_test(model, mode):
         history['t_acc'].append(t_acc_epoch)
         history['v_acc'].append(val_acc)
         
-        scheduler.step(val_acc)
         
         if val_acc > best_val_acc:
             best_val_acc = val_acc
@@ -248,9 +237,7 @@ def train_and_test(model, mode):
             
     return history, (te_loss / len(test_ds)), (te_corr / len(test_ds)), total_time
 
-# ==========================================
-# 5. SPUSTENIE EXPERIMENTOV
-# ==========================================
+# run exp
 results = {m: {mo: [] for mo in MODES} for m in MODEL_NAMES}
 overall_start = time.time()
 
@@ -264,15 +251,12 @@ for m_name in MODEL_NAMES:
             hist, t_loss, t_acc, r_time = train_and_test(model, mode)
             results[m_name][mode].append({'hist': hist, 'loss': t_loss, 'acc': t_acc})
             
-            # --- VOLANIE VYKRESLOVANIA PO KAŽDOM BEHU ---
             fig_title = f"Model: {m_name.upper()} | Mód: {mode.upper()} | Run: {r+1}"
             visualize(model, test_ds, fig_title)
             
             print(f"  [DONE] Test Acc: {t_acc*100:.2f}% | Run Time: {str(timedelta(seconds=int(r_time)))}")
 
-# ==========================================
-# 6. SUMÁR (Tabuľka a grafy strát zostávajú)
-# ==========================================
+# summary table
 print(f"\n\n{'#'*60}\n{' FINAL SUMMARY TABLE ':#^60}\n{'#'*60}")
 print(f"{'MODEL':<15} | {'MODE':<10} | {'TEST LOSS':<12} | {'TEST ACC':>10} | {'VAL LOSS':<12} | {'VAL ACC':>10} | {'TRAIN LOSS':<12} | {'TRAIN ACC':>10}")
 print("-" * 120)

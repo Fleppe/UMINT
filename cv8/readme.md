@@ -15,7 +15,7 @@
 | Transformácia | Parameter | Popis |
 |--------------|-----------|-------|
 | Resize | 256 | Zmena veľkosti na 256×256 px |
-| CenterCrop| 224/227(Alexnet) | Výrez 224×224/227x227(Alexnet) px |
+| CenterCrop| 224| Výrez 224×224 px |
  
 ## M1 – AlexNet
 

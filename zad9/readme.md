@@ -6,63 +6,47 @@
 
 ![Pevné intervaly – Režim 1](images/int_1.png)
 
-- **Maximálny počet áut:** 16
-- **Počet áut na konci:** 8
-- **Maximá v pruhoch:** A1=2, A2=2, A3=2, B1=3, B2=3, C1=4, C2=2
+
 
 #### Režim 2
 
 ![Pevné intervaly – Režim 2](images/int_2.png)
 
-- **Maximálny počet áut:** 36
-- **Počet áut na konci:** 31
-- **Maximá v pruhoch:** A1=2, A2=2, A3=3, B1=6, B2=3, C1=6, C2=3
+
 
 #### Režim 3
 
 ![Pevné intervaly – Režim 3](images/int_3.png)
 
-- **Maximálny počet áut:** 25
-- **Počet áut na konci:** 17
-- **Maximá v pruhoch:** A1=2, A2=1, A3=3, B1=2, B2=2, C1=13, C2=6
 
 #### Režim 4
 
 ![Pevné intervaly – Režim 4](images/int_4.png)
 
-- **Maximálny počet áut:** 27
-- **Počet áut na konci:** 18
-- **Maximá v pruhoch:** A1=2, A2=2, A3=3, B1=13, B2=7, C1=2, C2=1
+
 
 #### Režim 5
 
 ![Pevné intervaly – Režim 5](images/int_5.png)
 
-- **Maximálny počet áut:** 39
-- **Počet áut na konci:** 38
-- **Maximá v pruhoch:** A1=11, A2=16, A3=11, B1=2, B2=1, C1=1, C2=3
+
 
 #### Režim 6
 
 ![Pevné intervaly – Režim 6](images/int_6.png)
 
-- **Maximálny počet áut:** 60
-- **Počet áut na konci:** 57
-- **Maximá v pruhoch:** A1=10, A2=18, A3=11, B1=12, B2=6, C1=9, C2=14
 
 ### tabuľka pre pevné riadenie
 
-| Režim |  Max áut | Final áut |
-|:-----:|:-------:|:---------:|
-| 1 | 16 | 8 |
-| 2 |  36 | 31 |
-| 3 |  25 | 17 |
-| 4 |  27 | 18 |
-| 5 |  39 | 38 |
-| 6 |  **60** | **57** |
-
+| Režim | Max áut | Final áut | A1 | A2 | A3 | B1 | B2 | C1 | C2 |
+|:-----:|:-------:|:---------:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| 1 | 16 | 8  | 2  | 2  | 2  | 3  | 3  | 4  | 2  |
+| 2 | 36 | 31 | 2  | 2  | 3  | 6  | 3  | 6  | 3  |
+| 3 | 25 | 17 | 2  | 1  | 3  | 2  | 2  | 13 | 6  |
+| 4 | 27 | 18 | 2  | 2  | 3  | 13 | 7  | 2  | 1  |
+| 5 | 39 | 38 | 11 | 16 | 11 | 2  | 1  | 1  | 3  |
+| 6 | **60** | **57** | 10 | 18 | 11 | 12 | 6  | 9  | 14 |
 ---
-
 ## Fuzzy riadenie
 
 ###  Návrh fuzzy systému
@@ -120,60 +104,48 @@ Fuzzy systém obsahuje **7 pravidiel**:
 
 ![Fuzzy – Režim 1](images/fuzzy_1.png)
 
-- **Maximálny počet áut:** 16
-- **Počet áut na konci:** 4
-- **Maximá v pruhoch:** A1=2, A2=2, A3=2, B1=3, B2=3, C1=4, C2=2
+
 
 #### Režim 2 
 
 ![Fuzzy – Režim 2](images/fuzzy_2.png)
 
-- **Maximálny počet áut:** 23
-- **Počet áut na konci:** 6
-- **Maximá v pruhoch:** A1=7, A2=7, A3=6, B1=5, B2=4, C1=4, C2=5
+
 
 #### Režim 3 
 
 ![Fuzzy – Režim 3](images/fuzzy_3.png)
 
-- **Maximálny počet áut:** 21
-- **Počet áut na konci:** 10
-- **Maximá v pruhoch:** A1=2, A2=2, A3=3, B1=2, B2=2, C1=13, C2=6
+
 
 #### Režim 4 
 
 ![Fuzzy – Režim 4](images/fuzzy_4.png)
 
-- **Maximálny počet áut:** 20
-- **Počet áut na konci:** 7
-- **Maximá v pruhoch:** A1=2, A2=2, A3=3, B1=10, B2=6, C1=2, C2=1
+
 
 #### Režim 5
 
 ![Fuzzy – Režim 5](images/fuzzy_5.png)
 
-- **Maximálny počet áut:** 23
-- **Počet áut na konci:** 8
-- **Maximá v pruhoch:** A1=5, A2=12, A3=5, B1=2, B2=1, C1=2, C2=3
+
 
 #### Režim 6
 
 ![Fuzzy – Režim 6](images/fuzzy_6.png)
 
-- **Maximálny počet áut:** 33
-- **Počet áut na konci:** 10
-- **Maximá v pruhoch:** A1=7, A2=15, A3=7, B1=10, B2=7, C1=8, C2=8
 
-### Súhrnná tabuľka pre fuzzy riadenie
 
-| Režim | Max áut | Final áut |
-|:-----:|:-------:|:---------:|
-| 1 |  16 | 4 |
-| 2 | 23 | 6 |
-| 3 |  21 | 10 |
-| 4 |  20 | 7 |
-| 5 |  23 | 8 |
-| 6 |  **33** | **10** |
+### tabuľka pre fuzzy riadenie
+
+| Režim | Max áut | Final áut | A1 | A2 | A3 | B1 | B2 | C1 | C2 |
+|:-----:|:-------:|:---------:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| 1 | 16 | 4  | 2 | 2  | 2 | 3  | 3 | 4  | 2 |
+| 2 | 23 | 6  | 7 | 7  | 6 | 5  | 4 | 4  | 5 |
+| 3 | 21 | 10 | 2 | 2  | 3 | 2  | 2 | 13 | 6 |
+| 4 | 20 | 7  | 2 | 2  | 3 | 10 | 6 | 2  | 1 |
+| 5 | 23 | 8  | 5 | 12 | 5 | 2  | 1 | 2  | 3 |
+| 6 | **33** | **10** | 7 | 15 | 7 | 10 | 7 | 8  | 8 |
 
 ---
 
@@ -220,8 +192,3 @@ Fuzzy systém obsahuje **7 pravidiel**:
 
 
 ---
-
-
-Kľúč úspechu spočíval v **bezpečnostnom pravidle č. 3** (`if cars_red is high then duration is short`), ktoré okamžite skracuje aktuálnu zelenú, len čo sa červené pruhy začnú preplňovať. Vďaka tomu sa stíhajú odbavovať aj pruhy, ktoré majú zelenú len v jednej z troch fáz cyklu (B1, C1).
-
-Fuzzy logika sa ukázala ako **vhodný nástroj pre riadenie dopravy** – umožňuje formálne zachytiť ľudský úsudok („ak je tu veľa a tam málo, daj dlhú zelenú") a previesť ho na konkrétne číselné rozhodnutia bez potreby presného matematického modelu dopravnej situácie.

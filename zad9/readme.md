@@ -86,17 +86,15 @@
 
 ### Báza pravidiel
 
-Fuzzy systém obsahuje **7 pravidiel**:
+Fuzzy systém obsahuje **5 pravidiel**:
 
 | # | Ak `cars_green` je... | a `cars_red` je... | potom `duration` je... |
 |:-:|---|---|---|
-| 1 | low | high | short |
-| 2 | high | low | long |
-| 3 | any | high | short |
-| 4 | medium | medium | medium |
-| 5 | medium | high | short |
-| 6 | high | medium | long |
-| 7 | low | low | medium |
+| 1 | high | low | long |
+| 2 | any | high | short |
+| 3 | medium | medium | medium |
+| 4 | high | medium | long |
+| 5 | low | low | medium |
 
 ###  Výsledky jednotlivých behov
 
